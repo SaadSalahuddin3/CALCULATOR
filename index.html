@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hello, World!</title>
+
+    <style>
+        /* Please Add All The Styles Here in the Style Tag */
+        .container
+{
+    width: 100%;
+    height: 100vh;
+    /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(145deg, black,yellowgreen);
+}
+
+table{
+    width: 40%;
+    height: 50%;
+    align-self: center;
+}
+table th
+{
+    height: 30px;
+
+}
+input
+{
+    width: 97%;
+    height: 40px;
+    text-align: right;
+    font-size: 40px;
+    padding-right: 5px;
+    outline: none;
+    margin: 10px 0px;
+}
+td
+{
+    font-size: 35px;
+    text-align: center;
+    background-color: aquamarine;
+}
+td:hover
+{
+    background-color: aqua;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+
+
+
+        <table border="2px">
+            <thead>
+                <tr>
+                    <th colspan="4">
+                        <input type="text" name="" id="result" value="" />
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td onclick="calculate(7)">7</td>
+                    <td onclick="calculate(8)">8</td>
+                    <td onclick="calculate(9)">9</td>
+                    <td onclick="calculate('*')">*</td>
+                </tr>
+                <tr>
+                    <td onclick="calculate(4)">4</td>
+                    <td onclick="calculate(5)">5</td>
+                    <td onclick="calculate(6)">6</td>
+                    <td onclick="calculate('-')">-</td>
+                </tr>
+                <tr>
+                    <td onclick="calculate(1)">1</td>
+                    <td onclick="calculate(2)">2</td>
+                    <td onclick="calculate(3)">3</td>
+                    <td onclick="calculate('+')">+</td>
+                </tr>
+                <tr>
+                    <td onclick="calculate('C')">C</td>
+                    <td onclick="calculate(0)">0</td>
+                    <td onclick="resultCal()">=</td>
+                    <td onclick="calculate('/')">/</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+<script>
+    let result = document.getElementById("result")
+
+
+function calculate(value) {
+    
+    
+    
+    if (value === 'C') {
+        result.value = ""
+    }
+    else {
+        result.value += value;
+    }
+
+   }
+   function resultCal()
+   {
+    if(result.value=="")
+        {
+                alert("Please give Two numbers")
+        }
+        else{
+        result.value=eval(result.value)
+
+        }
+    
+   }
+</script>
+</body>
+
+
+</html>
